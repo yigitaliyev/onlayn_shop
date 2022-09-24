@@ -1,7 +1,5 @@
 import styled from "styled-components";
-// import { useSelector} from 'react-redux'
 import { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
 import { useSelector } from "react-redux";
 import Shop from "../container/shop";
 

@@ -4,31 +4,31 @@ import styled from "styled-components";
 function Corusel() {
   const data = [
     {
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
+      image: "https://images.deal.by/290826635_w700_h500_nabor-instrumentov-826.jpg",
     },
     {
-      image: "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
+      image: "https://shopme.uz/upload/iblock/bd3/bd3c9c076435ab051e33cb60f3eed4ff.jpg",
     },
     {
-      image: "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSia_5k0rck2z6G5rtZJsXI63zG8y_TREAARNGVw0UYUX8CGO8uIpsib86cHApyVE1FkWQ&usqp=CAU",
     },
     {
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
+      image: "https://redmaster.by/upload/iblock/03d/nabor_instrumentov_17pr1_2_6gr_10_27mm.jpg",
     },
     {
-      image: "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
+      image: "https://images.prom.ua/507031584_nabor-klyuchej-kombinirovannyh.jpg",
     },
     {
-      image: "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
+      image: "https://avatars.mds.yandex.net/get-mpic/5177817/img_id7017430910283451405.jpeg/orig",
     },
     {
-      image: "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
+      image: "https://content2.rozetka.com.ua/goods/images/original/217838968.jpg",
     },
     {
-      image: "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
+      image: "https://static.sello.uz/unsafe/x400/https://static.sello.uz/fm/20211227/4e4c7a83-8e04-430a-bf36-b1c2a134f00b.jpg",
     },
     {
-      image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSECOsE9eBL1JR5-CrYXqcJFPGdBJp3sMRT3Q&usqp=CAU",
     }
   ];
 
@@ -57,7 +57,7 @@ function Corusel() {
             // slideNumber={true}
             slideNumberStyle={slideNumberStyle}
             captionPosition="bottom"
-            // automatic={true}
+            automatic={true}
             // dots={true}
             pauseIconColor="white"
             pauseIconSize="40px"

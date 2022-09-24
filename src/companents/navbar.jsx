@@ -31,7 +31,7 @@ function Bizxaqimizda() {
                 
                 <Links>
 
-                    <a href="boshsaxifa"  onClick={Boshsaxifa} >Bosh sahifa</a>
+                    <a href="/"  onClick={Boshsaxifa} >Bosh sahifa</a>
                     <a href="#" onMouseEnter={() => setshow(true)
                       } >Kategoriyalar</a>
                     <a href="bizhaqimizda" className="bizhaqimizda" onClick={Bizxaqimizda} >Biz haqimizda</a>

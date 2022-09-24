@@ -8,8 +8,6 @@ const qatlam = createSlice({
 
     initialState: {
         todo: [
-
-         
             {
                 title: "Servis anjomlari",
                 id: 2,

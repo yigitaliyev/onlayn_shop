@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Carts from "../companents/carts";
 import Products from "../container/products";
 
-function Shop(props) {
+function Shop() {
   const [cart , setcart] = useState({
     products: [],
     totalPrise: 0,
@@ -17,24 +17,11 @@ function Shop(props) {
     copyState.products.push(data)
     setcart(copyState)
     }    
-    function changecount(action , id) {
-      const staytCopy ={...cart}
-      const index = cart.products.findIndex(product => product.id ===id);
-      
-      if(action === "+") {
-        staytCopy.products[index].count +=1
-      }else{
-        staytCopy.products[index].count -=1
-        
-      }
-      setcart(staytCopy)
-    } 
-    console.log(cart)
+  
     return (
       <Wrapper>
                  
-                <Products  addToCart = {addToCart}/>
-                <Carts CartsData = {cart}  changecount ={changecount}/>
+                <Products  addToCart={addToCart}/>
             </Wrapper>
 
         

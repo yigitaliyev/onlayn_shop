@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { ReactComponent as AddBtn} from "../rasmlar/Vector (2).svg"
+import {  useDispatch, useSelector } from "react-redux"
+import { addCart } from "../store/qatlam2";
 
-   function Product({ id, image, Name, info, price , addToCart }) {
 
-    
+   function Product({image, Name, info, price, id }) {
+   const dispach = useDispatch()
+   // const cart   = useSelector(store => store.cart)
+      //   console.log(cart)
     return (
         <Wrapper>
           <div className="imgbox">
@@ -14,7 +18,7 @@ import { ReactComponent as AddBtn} from "../rasmlar/Vector (2).svg"
             
                <div className="save_btn">
                    <h3>{price}</h3>
-                      <button onClick={() => addToCart(id)}>
+                      <button onClick={() => dispach(addCart({image, Name, info, price,id})) }>
                          <AddBtn />
                       </button>  
 
@@ -27,6 +31,8 @@ import { ReactComponent as AddBtn} from "../rasmlar/Vector (2).svg"
 export default Product;
 
 const Wrapper = styled.div`
+     width: 100%;
+     /* height: 100vh; */
           gap: 20px;
          img {
             width: 200px;
