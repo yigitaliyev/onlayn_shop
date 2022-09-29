@@ -13,6 +13,7 @@ const qatlam = createSlice({
                 id: 2,
                 img: Image.Servis,
             },
+          
         ]
     },
     reducers: {

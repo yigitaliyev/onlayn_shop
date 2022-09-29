@@ -34,10 +34,7 @@ export default Shop;
 
 
 const Wrapper = styled.div`
-      display: grid;
-      /* padding-left: 150px; */
-      background: #ADADAD;
-    
+     
      
     
 `;

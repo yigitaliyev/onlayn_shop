@@ -10,8 +10,8 @@ export  const qatlam2 = createSlice({
     name: "qatlam2",
     initialState,
     reducers: {
-        addCart: (state , {payload}) => {
-                        
+
+        addCart: (state , {payload}) => {                
             state.cart.push(payload)
             console.log(payload)
         }  

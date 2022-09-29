@@ -18,7 +18,7 @@ const [seorch, setseorch] = useState("")
                        .map(product =>
                         <Product key={product.id} {...product}  addToCart={addToCart} />)}    
               </Staylddiv>
-             
+              
         </Wrapper>
     )
 }
@@ -26,11 +26,22 @@ const [seorch, setseorch] = useState("")
 export default Products;
 
 const Wrapper= styled.div`
-             margin: auto;
+             /* margin: auto; */
+
+             
             `;
 const Staylddiv = styled.div`
                 display: grid;
-                grid-template-columns: repeat(6,180px);
-                gap: 30px;
+                grid-template-columns: repeat(4,180px);
+                gap: 50px;
                 flex-shrink: 0;
+                /* width: 100%; */
+                justify-content: center;
+
+                @media (max-width:300px) {
+                display: grid;
+                grid-template-columns: repeat(1 ,100px);
+                width:100% ;
+
+                }
 `; 

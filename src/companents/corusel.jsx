@@ -45,8 +45,7 @@ function Corusel() {
 
     return (
         <Wrapper>
-              <div >
-        <div> 
+         
           <Carousel
             data={data}
             time={2000}
@@ -66,16 +65,14 @@ function Corusel() {
             thumbnails={false}
             thumbnailWidth="100px"
             style={{
-
               textAlign: "center",
               maxWidth: "850px",
               maxHeight: "500px",
               // margin: "40px auto",
               width: "850px",
+            
             }}
           />
-        </div>
-      </div>      
        </Wrapper>
 
    )
@@ -85,10 +82,9 @@ function Corusel() {
 export default Corusel;
 
 const Wrapper = styled.div`
-       /* max-width: 860px; */
-         /* max-height: 500px; */
-         
-       /* position: absolute; */
-       /* background-color: red; */
-       /* z-index: -1; */
+     
+     @media (max-width:300px) {
+                 width  :100px ;
+                 height: 100px;
+     } 
 `;

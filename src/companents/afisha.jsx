@@ -19,11 +19,8 @@ export default Afisha;
 
 
 const Wrapper = styled.div`
-         /* background-color: yellow; */
-          /* display: flex; */
           margin: auto;
           justify-content: center;
-          /* z-index: -2; */
 
           h1 {
             font-family: 'Space Grotesk';
@@ -37,5 +34,20 @@ const Wrapper = styled.div`
           .a{
             color: #9e3030;
           }
+
+          @media(max-width: 300px) {
+                          
+            
+             h1 {
+              color: yellow;
+              font-weight:400 ;
+              font-size: 20px ;
+              line-height: 20px;
+            color: #fff;
+              
+
+             }
+            
+            }
            
 `;

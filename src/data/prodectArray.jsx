@@ -72,4 +72,89 @@ export const products = [
         // info: "2-Options",
         price: "30.000 so'm"
     },
+    {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    },
+    {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    },
+    {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    },
+    {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    },
+    {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    },
+     {
+        id: 9,
+        image:Image.TrkluchO,
+        Name: "Trishotka kuluch",
+        // info: "Grey",
+        price: "25.000 so'm" 
+    },
+    {
+        id: 12,
+        image:Image.TrkluchQ,
+        Name: "Trishitka kuluch",
+        // info: "2-Options",
+        price: "30.000 so'm"
+    }
+
 ]
