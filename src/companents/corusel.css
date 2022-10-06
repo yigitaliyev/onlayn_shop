@@ -1,0 +1,53 @@
+
+
+.corousel-container {
+   width: 90%;
+   max-width: 500px;
+   height: 50%;
+   /* background-color: black; */
+   display: flex;
+   position: relative;
+
+}
+.corousel {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x manda tory;
+    scroll-behavior: smooth;
+}
+.corousel-item {
+     display: flex;
+     flex-direction: column;
+     flex: 1 0 100%;
+     scroll-snap-align: start;
+}
+.corousel-btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+.left-btn {
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+.right-btn {
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.imgs {
+     /* width: 100%; */
+     /* height: 100%; */
+     height: 250px;
+     width: 250px;
+     background-color: red;
+     object-fit: cover;
+}

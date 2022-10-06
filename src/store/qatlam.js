@@ -7,7 +7,7 @@ const qatlam = createSlice({
     name: "qator",
 
     initialState: {
-        todo: [
+        category: [
             {
                 title: "Servis anjomlari",
                 id: 2,

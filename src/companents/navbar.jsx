@@ -1,169 +1,210 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import styled from "styled-components";
+import savarta from "../rasmlar/savat.webp"
 import logo from "../rasmlar/logo.png"
-import Afisha from "./afisha";
-import Corusel from "./corusel";
-import Kategoriyalar from "./kategoriyalar";
-import savat from "../rasmlar/savat.webp"
-import Boshsahifa from "./boshsahifa";
-import Ecx from "../rasmlar/close-outline.svg"
-import Menyu from "../rasmlar/list-outline.svg"
+import Ongga from "../rasmlar/strelka.svg"
+import { Link } from "react-router-dom";
 
-function Navbar() {
- const [show, setshow] = useState(false)
- const [bgcolor , setbgcolor] = useState(false)
- const [menyu , setmenyu  ] = useState(false)
-
-function Boshsaxifa(event) {
-      // console.log(event)  
-}
-function Bizxaqimizda() {
-     const  link = document.querySelector(".bizxaqimizda")
-      link.style.color = "#000"
-     setbgcolor(true)
-}
+function Navbar( {size}) {
+   const [burger_class, setburgerclass] = useState("burger-bar unclicked")
+   const [menu_class, setmenuclass] = useState("menu hidden")
+   const [isMenuClicked, setisMenuClicked] = useState(false)
+   const [hide, sethide] = useState(false)
 
 
-    return(
-        <Wrapper>
+   function updatemenu() {
+      if (!isMenuClicked) {
+         setburgerclass("burger-bar clicked")
+         setmenuclass("menu visibele")
+      } else {
+         setburgerclass("burger-bar unclicked")
+         setmenuclass("menu hidden")
+      }
+      setisMenuClicked(!isMenuClicked)
+   }
+   function destroy() {
+      if (!isMenuClicked) {
+         setburgerclass("burger-bar clicked")
+         setmenuclass("menu visibele")
+      } else {
+         setburgerclass("burger-bar unclicked")
+         setmenuclass("menu hidden")
+      }
+      setisMenuClicked(!isMenuClicked)
+   }
 
-                <div>
-                    {/* <Box>
-                       <img src={Ecx}   alt="" srcset=""  />
-                       <img src={Menyu} alt="" srcset="" />   
-                    </Box> */}
-                     
-                <Links>
+   return (
+      <Wrapper>
+         <nav>
+            <div className="burger-menu" onClick={updatemenu}>
+               <div className={burger_class}></div>
+               <div className={burger_class}></div>
+               <div className={burger_class}></div>
+            </div>
+            <Link to="/olindi"><img src={savarta} alt="" srcset="" /> </Link>
+               <span>{size}</span>
+               {/* <img className="logo" src={logo} alt="" /> */}
+         </nav>
 
-                    <a href="/"  onClick={Boshsaxifa}>  Boshsahifa</a>
-                    <a href="#" onClick={() => setshow(true)
-                      } >Kategoriyalar   </a>
-                    <a href="bizhaqimizda" className="bizhaqimizda" onClick={Bizxaqimizda} >Bizhaqimizda</a>
-                    <a href="http://">Aloqa</a>
-                   
-                     <a href="olindi" className="savatcha"><img src={savat} alt="" srcset="" /></a> 
-                </Links>
-                   
-                </div>
- 
-                 {show ? (<div onDoubleClick={() => setshow(false)}>
-                  <Kategoriyalar />
-                 </div>) : ""}
+         <div className={menu_class}>
+            <div className="links">
+               <Link to="/" onClick={destroy}>Bosh sahifa </Link>
+               <Link to="#" onClick={() => sethide(true)} > Katogoritalar <img className="onnga" src={Ongga} alt="" srcset="" /></Link>
+               <Link to="/bizhaqimizda" onClick={destroy}> Biz haqimizda </Link>
+               <Link to="#"> Aloqa </Link>
+            </div>
 
-                    {menyu ? setmenyu(false) : ""}      
 
-                        </Wrapper>
-    )
+            {hide ? (<div className="kategoriyalar">
+               <div>
+                  <Link to="/servisanjomlari" onClick={destroy}>Servis anjomlari</Link>
+               </div>
+
+            </div>) : ""}
+         </div>
+      </Wrapper>
+   )
 }
 
 export default Navbar;
 const Wrapper = styled.div`
-      width: 100%;  
-      height: 91px;
-      background-color: #726c6c;
+      width: 100%;
+      /* height: 100vh; */
+      z-index: 5;
+      .logo {
+            width: 50px;
+            height: 50px;
+         
+         }  
+      nav {
+         width: 100%; 
+         height: 80px;
+         background-color: #d59090;
+         display: flex;
+         justify-content: flex-start;
+         padding: 16px; 
+         /* z-index: -1; */
+
+         img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 95%;
+            background-color: #d59090;
+            color: #d59090;
+         }
       
-     div{
-        display: flex;
-        width: 100%;
-     }
-
-     @media (max-width: 300px) {
-          width: 100%;
-          height: 30px;
-          background-color: #726c6c;
-
-          div {
-            display: flex;
-            width: 100px;
-          }
-     }
-
-`;
-const Box = styled.div`
-           
-         @media (max-width: 300px) {
-       
-          img {  
-           position: absolute;  
-           width: 10px;
-           height: 10px;
-      }   
+         span{
+            position: absolute;
+            left: 97.5%;
+            padding: 0 2px;
+            border: 1px solid red;
+            background-color: red;
+            border-radius: 10px;
+            color: white;
 
          }
-
-
-
-       img {  
-         position: absolute;  
-         width: 50px;
-         height: 50px;
       }
-      
-  .logoimg {
-        /* padding: 5px 0 5px 20px; */
-        /* width: 80px; */
-        /* height: 80px; */
-        /* margin-right: 50px; */
+      .burger-menu {
+         height: 100%;
+         width: 64px;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: space-between;
+         cursor: pointer;
+         /* background-color: red; */
       }
+      .burger-bar {
+         width: 64px;
+         height: 8px;
+         background-color: white;
+         border-radius: 8px;
+
+      }
+      .menu {
+          width: 70%;
+          height: calc(100vh - 80px)  ;
+          background-color: yellow;
+          position :absolute ;
+          /* padding-top: 100px ; */
+          margin-top: 80px;
+          top: 0;
+          z-index: 2 ;
+          transition: 2s;
+      }
+      .links {
+          position: absolute;
+          top: 10%;
+          left: 20%;
+          transition: 2s;
+          
+          a {
+            display: flex;
+            padding-top: 40px;
+            text-decoration: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 30px;
+            line-height: 30px;
+            color: black;
+          }
+          .onnga {
+            position: absolute;
+            top: 42%;
+            left: 100%;
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            color: red ;
+          }
+      }
+
+      .kategoriyalar {
+         position: absolute;
+         top: 26%;
+         left: 40%;
+         /* display: none; */
+
+         a{
+            border: none;
+            text-decoration: none;
+            color: black;
+            background-color: yellow;
+            cursor: pointer;
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 120%;
+            text-align: center;
+         }
+      }
+
+      .hidden {
+         display: none;
+      }
+      .visible {
+          display: inherit;
+      }
+      .burger-bar.clicked:nth-child(1) {
+         transform: rotate(45deg) translate(12px , 20px);
+        transition: ease-out 0.5s;
+      }
+      .burger-bar.clicked:nth-child(2) {
+         transform: scale(0.1);
+        transition: ease-out 0.5s;
+      }
+      .burger-bar.clicked:nth-child(3) {
+         transform: rotate(135deg) translate(-8px , 16px);
+        transition: ease-out 0.5s;
+      }
+      .burger-bar.unclicked {
+         transform: rotate(0) translate(0);
+         transition: cubic-bezier(0.075, 0.82, 0.165, 1) 2s;
+      }   
+             
 
 `;
-const Links = styled.div`
-           /* margin: 30px 0; */
-           position: relative;
-           top: 30px;
-
-               a {
-                position: relative;
-                left: 20px;
-                /* top: 20px; */
-
-                text-decoration: none;
-                color: #fff;
-                padding-right: 20px;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 22px;
-                line-height: 27px;
-               }
-               a:hover {
-                  color: red;
-                  font-weight: 900;
-                  /* font-size: 25px; */
-                /* line-height: 30px; */
-                }
-               .savatcha {
-                
-               }
-               img {
-
-                    width: 40px;    
-                    height: 40px;
-                    overflow: hidden;
-               }
-
-                @media (max-width: 300px) {
-                    /* margin: 10px 0; */
-                       position: relative;
-                       top: 5px;
-                    
-                    a {
-                       position: relative;
-                       left: 4px;
-
-                      text-decoration: none;
-                      color: #fff;
-                      padding-right: 8px;
-                      font-style: normal;
-                      font-weight: 700;
-                      font-size: 12px;
-                      line-height: 16px;
-               }
-                     img {
-                      width: 16 px;
-                      height: 18px;
-                      overflow: hidden;
-
-                     }
-                }
-`;
-

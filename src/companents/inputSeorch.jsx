@@ -12,7 +12,9 @@ function InputSeorch(props) {
 export default InputSeorch;
 
 const Wrapper = styled.div`
-        margin: 0  150px 40px  ;
+      /* position: absolute; */
+      /* top: 20px; */
+      margin: 0  260px 40px  ;
 
       input {
         flex-direction: row;
@@ -31,7 +33,7 @@ const Wrapper = styled.div`
         margin: 60px 0 0 223px
       }
 
-      @media (max-width: 300px) {
+      @media (max-width: 412px) {
           
           input {
             flex-direction: row;

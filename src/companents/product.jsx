@@ -4,24 +4,20 @@ import {  useDispatch, useSelector } from "react-redux"
 import { addCart } from "../store/qatlam2";
 
 
-   function Product({image, Name, info, price, id }) {
-   const dispach = useDispatch()
-   // const cart   = useSelector(store => store.cart)
-      //   console.log(cart)
+   function Product(  {product, handleClick}) {
+      const {image, Name, info, price, id } = product
     return (
         <Wrapper>
           <div className="imgbox">
-            <img src={image} alt=""/>
+            <img src={product.image} alt=""/>
           </div>     
-          <h3>{Name}</h3>
-          <p>{info}</p> 
+          <h3>{product.Name}</h3>
+          {/* <p>{product.info}</p>  */}
             
                <div className="save_btn">
-                   <h3>{price}</h3>
-                      <button onClick={() => dispach(addCart({image, Name, info, price,id})) }>
-                         <AddBtn />
-                      </button>  
+                     <h3>{product.price}</h3>
 
+                      <button onClick={() => handleClick(product)}>Savatchaga</button>  
                </div>
 
         </Wrapper>
@@ -31,17 +27,17 @@ import { addCart } from "../store/qatlam2";
 export default Product;
 
 const Wrapper = styled.div`
-     /* width: 100%; */
-     display: grid;
-     /* grid-template-columns: repeat(4 , 200px); */
-     /* height: 100vh; */
-     /* background-color: red; */
-          gap: 20px;
+         display: grid;
+         gap: 2px;
+         border: 2px solid black;
+         width: 210px;
+         height: 300px;
+         border-radius: 10px;
          img {
-            width: 200px;
-            height: 210px;
-            border-radius: 10px;
-            object-fit: fill;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 0 0;
+            /* object-fit: fill; */
          }
          h3 {
                  
@@ -67,24 +63,25 @@ const Wrapper = styled.div`
          }
          
          .imgbox {
-
-            width: 191.36px;
-            height: 232px;
+             background-color: red;
+            width: 100%;
+            height: 200px;
             
          }
 
        .save_btn {
-               display: flex;
-               gap: 50px;
+               /* display: flex; */
+               /* gap: 50px; */
                      button{
-                        width: 34px;
+                        width: 100px;
                         height: 34px;
                         border-radius: 8px;
-                        background-color: black;
+                        /* background-color: black; */
+                        margin-left: 50px;
                      }
        }
         
-       @media (max-width:300px) {
+       @media (max-width:412px) {
                 width: 100%;
                 gap: 10px;
                 img {
@@ -120,5 +117,11 @@ const Wrapper = styled.div`
        }
 
      } 
-
+     
+     :hover {
+       /* top: 2px; */
+       position: relative;
+       top: -5px;
+       transition: 0.1s;
+     }
 `;
